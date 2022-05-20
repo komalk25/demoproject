@@ -7,10 +7,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-      
-          <%= link_to "seller", new_seller_registration_url%>
-        </li>
+          <%= link_to "seller", new_seller_registration_url, class: "navbar-item button is-dark"%>
+        </li> 
       </ul> 
+      <% if seller_signed_in?%>
+        <%= link_to "create products", new_seller_product%>
+      <%else%>
+      <%end%>
+     
         
           
       

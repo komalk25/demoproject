@@ -8,6 +8,8 @@ class ProductsController < ApplicationController
 
   # GET /products/1 or /products/1.json
   def show
+    @seller = Seller.find(params[:seller_id])
+  @product = @seller.products.find(params[:id])
   end
 
   # GET /products/new
@@ -17,11 +19,16 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
+    @seller = Seller.find(params[:seller_id])
+    @product = Product.find(params[:id])
   end
 
   # POST /products or /products.json
   def create
-    @product = Product.new(product_params)
+    @seller = Seller.find(params[:seller_id]) 
+    @product = @seller.products.create(product_params)
+  redirect_to seller_path(@seller)
+    #@product = Product.new(product_params)
 
     respond_to do |format|
       if @product.save
@@ -36,6 +43,15 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
+    @seller = Seller.find(params[:seller_id])
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to @seller
+    else
+      render :edit, status: :unprocessable_entity  
+    end
+
+
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
@@ -49,7 +65,12 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1 or /products/1.json
   def destroy
+    @seller = Seller.find(params[:seller_id])
+    @product = @seller.productss.find(params[:id])
     @product.destroy
+    redirect_to seller_path(@seller), status: 303 
+ 
+    #  @product.destroy
 
     respond_to do |format|
       format.html { redirect_to products_url, notice: "Product was successfully destroyed." }

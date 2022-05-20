@@ -1,3 +1,18 @@
 <h1>seller show page</h1>
+<h1>
+<%= @seller.name %>
+</h1>
+
+<ul>
+  <li><%= link_to "Edit", edit_seller_path(@seller) %></li>
+  <li><%= link_to "Destroy", seller_path(@seller), data: {turbo_method: :delete,turbo_confirm: "Are you sure?"} %></li>
+</ul>
+
+<h2>product List:</h2>
+<%= render @seller.products %>
+
+<h2>Add a productss:</h2>
+<%= render 'products/form', product:@seller.products.build%>
+
 
 
