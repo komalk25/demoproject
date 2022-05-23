@@ -1,3 +1,4 @@
+<!--
 <p style="color: green"><%= notice %></p>
 
 <%= render @product %>
@@ -8,9 +9,18 @@ name:
 </strong>
 <%= image_tag @product.image.url %>
 </p>
+
 <div>
   <%= link_to "Edit this product", edit_product_path(@product) %> |
   <%= link_to "Back to products", products_path %>
 
   <%= button_to "Destroy this product", @product, method: :delete %>
 </div>
+-->
+
+<h3><%=@product.title%>
+    <p><%=@product.description%></p>
+    <%=@product.price%>
+    <%=@product.image%>
+</h3>
+   
