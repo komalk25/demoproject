@@ -76,9 +76,6 @@ class ProductsController < ApplicationController
     end
 =end    
  
-
-  
-
   private
 =begin    # Use callbacks to share common setup or constraints between actions.
     def set_product

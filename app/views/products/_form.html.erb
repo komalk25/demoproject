@@ -1,4 +1,4 @@
-<!--<%= form_with(model: product) do |form| %>-->
+
 <%= form_with model: [ @seller, product ] do |form|%> 
   <% if product.errors.any? %>
     <div style="color: red">
@@ -28,11 +28,6 @@
   <div>
     <%= form.label :price, style: "display: block" %>
     <%= form.text_field :price %>
-  </div>
-
-  <div>
-    <%= form.label :seller_id, style: "display: block" %>
-    <%= form.text_field :seller_id %>
   </div>
 
   <div>

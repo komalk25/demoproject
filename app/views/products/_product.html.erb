@@ -15,8 +15,14 @@
   </p>
 
   <p>
+    <strong>Image:</strong>
+    <%= image_tag product.image_url(:thumb).to_s %>
+  </p>
+  <p>
     <strong>Seller:</strong>
     <%= product.seller_id %>
   </p>
 
 </div>
+
+
