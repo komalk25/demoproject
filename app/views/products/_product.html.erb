@@ -18,6 +18,11 @@
     <strong>Image:</strong>
     <%= image_tag product.image_url(:thumb).to_s %>
   </p>
+
+  <p>
+    <strong>Video:</strong>
+    <%= video_tag product.video_url.to_s, :controls => true %>
+  </p>
   <p>
     <strong>Seller:</strong>
     <%= product.seller_id %>
