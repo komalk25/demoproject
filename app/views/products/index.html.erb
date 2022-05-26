@@ -2,11 +2,11 @@
 
 <h1>Products</h1>
 
-<div id="products">
+<div id="products" style: {{ display = "flex" }}>
   <% @products.each do |product| %>
-    <%= render product %>
-    
-     <% end %>
+   <%= render product %>
+  <% end %>
 </div>
  
+
 

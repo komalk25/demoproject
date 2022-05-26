@@ -1,3 +1,5 @@
+<table>
+
 <div id="<%= dom_id product %>">
   <p>
     <strong>Title:</strong>
@@ -16,7 +18,7 @@
 
   <p>
     <strong>Image:</strong>
-    <%= image_tag product.image_url(:thumb).to_s %>
+    <%= image_tag product.image_url,  style: 'height:120px; width:220px;' %>
   </p>
 
   <p>
@@ -29,5 +31,5 @@
   </p>
 
 </div>
-
+</table>
 
