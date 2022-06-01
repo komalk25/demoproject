@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
   
@@ -10,5 +11,8 @@ class Product < ApplicationRecord
   validates :image, presence: true
 
   has_many :cart_items
+
+  
+
 end
  
