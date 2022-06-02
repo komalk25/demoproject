@@ -6,11 +6,16 @@
   <% @products.each do |product| %>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <%= render product %>
+        <p>
+          <strong>Title:</strong>
+          <%=render product%>
+         </p>
+       
       </div>
     </div>
   <% end %>
 </div>
+
 
 
 
