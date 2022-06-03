@@ -7,7 +7,7 @@
           <p class="card-text">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
-  
+
               <div class="field">
                 <%= f.label :name %><br />
                 <%= f.text_field :name, autofocus: true %>
@@ -30,13 +30,14 @@
                 <%= f.label :password_confirmation %><br />
                 <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
               </div>
-
+              <br>
               <div class="actions">
-                <%= f.submit "Sign up" %>
-              </div>
+                <%= f.submit "Sign up",class: "btn btn-secondary btn-sm"   %>
+                             </div>
             <% end %>
           </p>
-          <%= render "devise/shared/links" %>  
+          <%= render "devise/shared/links" %>
+
       </div>
     </div>
   </div>

@@ -6,8 +6,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @seller = Seller.find(params[:seller_id])
-    @product = @seller.products.find(params[:id])
+    @product = Product.find(params[:id])
+    #@seller = Seller.find(params[:seller_id])
+    #@product = @seller.products.find(params[:id])
   end
  
   def create
@@ -31,7 +32,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1 or /products/1.json
   def destroy
     @seller = Seller.find(params[:seller_id])
-    @product = @seller.productss.find(params[:id])
+    @product = @seller.products.find(params[:id])
     @product.destroy
     redirect_to seller_path(@seller), status: 303 
     #  @product.destroy

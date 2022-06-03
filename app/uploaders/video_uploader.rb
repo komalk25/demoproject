@@ -3,7 +3,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   include CarrierWave::Video
-  process encode_video: [:mp4, resolution: "220x240"] 
+  process encode_video: [:mp4, resolution: "640x480"] 
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
@@ -30,9 +30,9 @@ class VideoUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process resize_to_fit: [50, 50]
-  # end
+   version :thumb do
+     process resize_to_fit: [50, 60]
+  end
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:

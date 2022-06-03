@@ -1,7 +1,7 @@
-<h1>seller show page</h1>
-<h1>
+<div class="container">
+<h3>
 <%= @seller.name %>
-</h1>
+</h3>
 
 <ul>
   <li><%= link_to "Edit", edit_seller_path(@seller) %></li>
@@ -14,6 +14,7 @@
 <h2>Add a products:</h2>
 <%= render 'products/form', product:@seller.products.build%>
 
-<%= link_to "edit",edit_seller_product_path(@seller) %>
+  <%= link_to "edit",edit_seller_product_path(@seller) %>
+  <%= link_to "show",seller_product_path(@seller)%>
 
-
+</div>
