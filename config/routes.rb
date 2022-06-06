@@ -3,10 +3,11 @@ Rails.application.routes.draw do
  
   root 'products#index'
   get "sellers/:id/products/:id", to: "products#show"
-  resources :products
+  
   devise_for :sellers
  
   resources :seller do
     resources :products
   end
+  resources :products
 end

@@ -8,13 +8,13 @@
     <div class="card-body">
     <div class="row">
     
-    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+    <div class="col-md-4 col-lg-4 col-xl-4 mb-4 mb-lg-0">
       <div class="bg-image hover-zoom ripple rounded ripple-surface">
         <%=image_tag product.image_url, style: 'height:120px; width:220px;' %>
       </div>
     </div>
 
-    <div class="col-md-6 col-lg-6 col-xl-6">
+    <div class="col-md-4 col-lg-4 col-xl-4">
       <h5><%=product.title%></h5>
       <div class="d-flex flex-row">
         <div class="text-secondary mb-1 me-2">
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+    <div class="col-md-4 col-lg-4 col-xl-4 border-sm-start-none border-start">
       <div class="d-flex flex-row align-items-center mb-1">
         <h4 class="mb-1 me-1">Rs.<%= product.price %></h4>
       </div>
