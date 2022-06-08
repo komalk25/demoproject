@@ -14,8 +14,10 @@
     
     <main>
       <%= render 'layouts/navbar'%>
-      
-        <%= yield %>
+      <%if seller_signed_in?%>
+        <%=render "products/form", product:current_seller.products.build%>
+      <%end %>
+      <%= yield %>
       
     </main> 
     <p class="notice"><%= notice %></p>

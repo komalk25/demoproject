@@ -1,1 +1,5 @@
 <h3>users index page</h3>
+
+<%@users.each do |user|%>
+    <%= link_to user.id, user%>
+<%end%>

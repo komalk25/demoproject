@@ -3,18 +3,25 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
  
-  root 'products#index'
-  get "sellers/:id/products/:id", to: "products#show"
-  resources :users
   devise_for :sellers
-  
-  #to create products with thw instance of sellers
+
+  root 'products#index'
+   
+  #to create products with the instance of sellers
   resources :seller do
     resources :products
   end
+
+  #to create cart for each user
+  resources :users do
+    resources :carts #for carts operations and path
+ end 
+
+  resources :carts do
+    resources :cart_items
+  end  
   #for CRUD of products
   resources :products
 
-  #for carts operations and path
-  resources :carts
+ 
 end
