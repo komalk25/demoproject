@@ -1,32 +1,39 @@
 class CartsController < ApplicationController
     before_action :authenticate_user!
-    #before_action :set_cart, only: [:show,:create]
+    before_action :set_cart, only: [:show, :edit, :update, :destroy]
     def index
-        
+        @carts = Cart.all
     end  
 
-    def show
-        @cart = Cart.find(params[:id])
-
-=begin  if @cart.present?
-            @cart = Cart.find(current_user.id)
-        else 
-            render :new
-        end
-=end        
-    end
+    def show    
+    end    
 
     def create
-        @user = current_user
-        @cart = @user.create_cart(cart_params)
-
-        redirect_to cart_items
-    end   
-    
-    private
-    
+      @user = current_user
+      @cart = @user.create_cart(cart_params)
+  
+    end
+  
+    def update
       
-    def cart_params
-        params.require(:cart).permit(:user_id)
-    end 
-end
+    end
+  
+    
+    def destroy
+      
+    end
+  
+    private
+      def set_cart
+        @cart = Cart.find(params[:id])
+      end
+  
+      def cart_params
+        params.fetch(:cart, {})
+      end
+  
+      def invalid_cart
+        logger.error "Attempt to access invalid cart #{params[:id]}"
+        redirect_to root_path, notice: "That cart doesn't exist"
+      end
+    end

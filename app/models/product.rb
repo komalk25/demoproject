@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  
+  before_destroy :not_referenced_by_any_cart_item
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
   
@@ -12,7 +12,12 @@ class Product < ApplicationRecord
 
   has_many :cart_items
 
-  
+  def not_referenced_by_any_cart_item
+    unless cart_items.empty?
+      errors.add(:base,'cart items present')
+      throw :abort
+    end  
+  end  
 
 end
  

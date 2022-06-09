@@ -13,13 +13,11 @@ Rails.application.routes.draw do
   end
 
   #to create cart for each user
-  resources :users do
-    resources :carts #for carts operations and path
- end 
+  resources :users 
+  resources :carts #for carts operations and path
 
-  resources :carts do
-    resources :cart_items
-  end  
+  resources :cart_items
+  
   #for CRUD of products
   resources :products
 
