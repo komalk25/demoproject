@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  
     before_action :authenticate_user!
     before_action :set_cart, only: [:show, :edit, :update, :destroy]
     def index
@@ -25,7 +26,7 @@ class CartsController < ApplicationController
   
     private
       def set_cart
-        @cart = Cart.find(params[:id])
+        @cart =  Cart.find_by(user_id: current_user.id)
       end
   
       def cart_params
@@ -33,7 +34,7 @@ class CartsController < ApplicationController
       end
   
       def invalid_cart
-        logger.error "Attempt to access invalid cart #{params[:id]}"
+        logger.error "Attempt to access invalid cart #{params[:user_id]}"
         redirect_to root_path, notice: "That cart doesn't exist"
       end
     end

@@ -2,9 +2,9 @@ module CurrentCart
     private
 
         def set_cart
-            @cart = Cart.find(session[:cart_id])
-        rescue ActiveRecord::RecordNotFound
-            @cart = Cart.create
-            session[:cart_id] = @cart.id
+            @user = current_user
+            @cart = @user.carts.find(params[:id])
+            rescue ActiveRecord::RecordNotFound
+            @cart = current_user.build_cart
         end    
 end    
