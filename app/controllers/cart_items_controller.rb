@@ -1,20 +1,7 @@
 class CartItemsController < ApplicationController
     include CurrentCart
     before_action :set_cart_item, only: [:show, :destroy]
-    def new
-      @cart_item = CartItem.new
-    end  
-    
-    def create
-      @product = Product.find(params[:product_id])
-      @cart_item = @cart.add_product(@product)
-
-      if @cart_item.save
-        redirect_to @cart_item.cart
-      else 
-        render :new
-      end   
-    end
+   
 
     def destroy
       @cart_item.destroy
