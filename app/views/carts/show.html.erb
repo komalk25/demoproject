@@ -1,15 +1,18 @@
 <h3>show cart page</h3>
 <ul>
-<% @cart_item.cart_items.each do |cart_item|%>
-    <li><%= cart_item.product.title%>
-    <%= cart_item.product.image%>
-    <%= cart_item.product.price%></li>
-
-    <%= link_to "Add One"%>
-    <%= link_to "Reduce One"%>
-    <%= link_to "Remove Product"%>
+<% @cart.cart_items.each do |item|%>
+<li>product: <%= item.product.title%>/ Price: <%= item.product.price%>/ Quantity: <%= item.quantity%></li>
+    <ul>
+        <li>
+            <%= button_to "Add One", carts_path(:product_id => item.product.id)%>
+            <%= link_to "remove One"%>
+        </li>
+        <li>
+            <%= link_to "remove"%>
+        </li>
+        <%= %>
+    </ul>
 <%end%>
 </ul>
-
 
 <%= button_to("Log Out",destroy_user_session_path,method: :delete) %>

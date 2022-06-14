@@ -3,8 +3,8 @@ module CurrentCart
         
         def set_cart
             @user = current_user
-            @cart = @user.cart || @user.create_cart
-            @cart.save
-            return @cart
+            @set_cart = @user.cart || @user.create_cart
+            @set_cart.save
+            @set_cart
         end    
 end    
