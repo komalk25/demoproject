@@ -1,5 +1,6 @@
 class Cart < ApplicationRecord
     has_many :cart_items, dependent: :destroy
+    has_many :orders
     belongs_to :user
      
     def add_product(product)
@@ -11,7 +12,7 @@ class Cart < ApplicationRecord
         else
             current_item = cart_items.build(product_id: product.id)
         end    
-          
+             
         current_item 
     end    
 

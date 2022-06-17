@@ -88,14 +88,11 @@
                       <p class="mb-2">Rs <%= @cart.total_price%></p>
                     </div>
 
-                    <button type="button" class="btn btn-info btn-block btn-lg">
-                      <div class="d-flex justify-content-between">
-                        <span></span>
-                        <span>Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                      </div>
-                    </button>
+                    
+                  <%= button_to("checkout",order_path, method: :get,class:"btn btn-info")%>
                   </div>
                 </div>
+                
 
               </div>
 
