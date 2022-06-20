@@ -1,0 +1,26 @@
+<h3>users form page</h3>
+<%= form_with model: user do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :address %><br>
+    <%= form.text_area :address %><br>
+  </div>
+
+  <div>
+    <%= form.label :pincode%>
+    <%= form.number_field :pincode%>
+  </div>
+
+  <div>
+    <%= form.label :state%>
+    <%= form.text_field :state%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

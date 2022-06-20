@@ -5,6 +5,5 @@ module CurrentOrder
         @user = current_user
         @order = @user.order.create
         @order.save
-
     end    
 end    

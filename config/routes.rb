@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   resources :cart_items
 
   resources :orders
+  resources :order_items
   post 'carts/:id/reduce' => "carts#reduce_quantity", as: "cart_reduce"
 end

@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
     include CurrentCart
     before_action :authenticate_user!
-
+    
     def show
       @cart = set_cart
     end
