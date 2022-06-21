@@ -1,5 +1,5 @@
 <h3>users form page</h3>
-<%= form_with model: user do |form| %>
+<%= form_with model: current_user do |form| %>
   <div>
     <%= form.label :name %><br>
     <%= form.text_field :name %>

@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   mount_uploader :image, ImageUploader
   mount_uploader :video, VideoUploader
   
-  has_many :orders_items
+  has_many :orders
   belongs_to :seller
 
   validates :title, presence: true

@@ -88,8 +88,8 @@
                       <p class="mb-2">Rs <%= @cart.total_price%></p>
                     </div>
 
-                    
-                  <%= button_to("checkout",orders_path(:user_id =>current_user.id),class:"btn btn-info")%>
+                  
+                  <%= link_to "checkout", user_path, class: "btn btn-info"%>
                   </div>
                 </div>
                 

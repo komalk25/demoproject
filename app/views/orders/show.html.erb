@@ -1,2 +1,4 @@
 <h3>orders show page</h3>
-<%= @cart.cart_items%>
+<% @order.order_items.each do |order|%>
+    <%= order.product.title%>
+<%end%>

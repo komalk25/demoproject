@@ -1,31 +1,33 @@
 class OrdersController < ApplicationController
-  
-    include CurrentCart
     before_action :authenticate_user!
-   
 
-    def create
-=begin       # @user = current_user
-       # @order = @user.order.create
-    #@order.save
-        @cart = set_cart
-        if @order
-            @cart.cart_items.each do |item|
-                @order.order_items.create!(
-                    product_id = item.product_id,
-                    quantity = item.quantity
-                )
-            end 
-            redirect_to root_path   
-        end
-=end 
-
-        @order = Order.find_by(user_id: current_user.id)
-        @cart = Cart.find_by(user_id: current_user.id)
-        @order_item = @order.add_item(@order)
-    end
-   
-end    
-
+       
+    def show
+        @order = Order.find(params[:id])
+    end    
     
-
+    def create
+        
+        @user = current_user
+        @cart = @user.cart
+        if @cart.cart_items.blank?
+        else   
+            @order = @user.order.create
+            @order.save 
+        end    
+        
+        @cart.cart_items.each do |item|
+           @order_item = @order.add_product(item)
+            if @order_item
+                @cart_item = CartItem.find_by(params[:cart_id])
+                @cart_item.destroy
+            end    
+        end    
+        
+        if @order
+           redirect_to order_path(@order)
+        else
+        end        
+                             
+    end    
+end    
