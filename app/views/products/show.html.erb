@@ -5,7 +5,7 @@
   <div class="card col-md-12" style="border-radius: 5px;width: 100%">
   <div class="col-md-12 bg-image hover-overlay ripple ripple-surface ripple-surface-light"
             data-mdb-ripple-color="light">
-    <%= video_tag @product.video_url.to_s, :controls => true , style: 'height:200px; width:355px;'%>        
+    <%= video_tag @product.video_url.to_s, :controls => true , style: 'height:180px; width:355px;'%>        
   </div>
   <div class="card-body pb-0">
   <div class="d-flex justify-content-between">
@@ -34,8 +34,8 @@
           <hr class="my-0" />
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
-              <%= link_to "remove",class: "text-dark fw-bold"%>
-              <%= button_to "Add to Cart", carts_path(:product_id => @product.id), method: :post%>
+             
+              <%= button_to "Add to Cart", carts_path(:product_id => @product.id), method: :post, class: "btn btn-info"%>
             </div>
           </div>
         </div>

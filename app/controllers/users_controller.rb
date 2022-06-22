@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find_by(id: current_user.id)
+        @cart = Cart.find_by(user_id: current_user.id)
     end  
     
     def edit

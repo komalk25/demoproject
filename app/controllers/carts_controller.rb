@@ -45,4 +45,4 @@ class CartsController < ApplicationController
       def cart_params
         params.require(:cart).permit(:user_id)
       end   
-    end
+end

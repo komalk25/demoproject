@@ -4,6 +4,6 @@ class Order < ApplicationRecord
   belongs_to :user
   
   def add_product(item)
-    @order_item = order_items.create(product_id: item.product_id) 
+    @order_item = order_items.create(product_id: item.product_id, quantity: item.quantity) 
   end  
 end

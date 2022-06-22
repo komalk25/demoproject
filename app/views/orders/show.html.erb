@@ -1,4 +1,9 @@
-<h3>orders show page</h3>
+<div class= " position-absolute top-50 start-50 translate-middle">
 <% @order.order_items.each do |order|%>
+    Order ID : <%= order.product.id%>
+    Supplier<%= order.product.seller.name%>
+    <%=image_tag order.product.image_url, style: 'height:140px; width:260px;' %>
     <%= order.product.title%>
 <%end%>
+</div>
+
