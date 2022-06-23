@@ -1,34 +1,43 @@
+<section style="background-color: #eee;">
+  <div class="container py-2">
+    <div class="row justify-content-center">
+      <div class="col-md-12 ">
+        <div class="card shadow-0 border rounded-3">
+          <div class="card-body">
+            <div class="row">
+              <div id="<%= dom_id product %>"> 
+                <div class="row">
+                <div class="col">
+                <p>
+                  <strong>Image:</strong>
+                  <%= image_tag product.image_url,  style: 'height:150px; width:200px;' %>
+                </p>
+                </div>
 
-
-<div id="<%= dom_id product %>">
-  <p>
-    <strong>Title:</strong>
-    <%= product.title%>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= product.description %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag product.image_url,  style: 'height:120px; width:220px;' %>
-  </p>
-
-  <p>
-    <strong>Video:</strong>
-    <%= video_tag product.video_url.to_s, :controls => true %>
-  </p>
-  <p>
-    <strong>Seller:</strong>
-    <%= product.seller_id %>
-  </p>
-
-</div>
-
+                <div class="col">
+                <p>
+                  <strong>Video:</strong>
+                  <%= video_tag product.video_url.to_s, :controls => true,style: 'height:150px; width:200px;' %>
+                </p>
+                </div>
+                </div>
+                <p>
+                  <strong>Title:</strong>
+                   <%= product.title%>
+                </p>
+                <p>
+                  <strong>Description:</strong>
+                  <%= product.description %>
+                </p>
+                <p>
+                  <strong>Price:</strong>
+                    <%= product.price %>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</section>

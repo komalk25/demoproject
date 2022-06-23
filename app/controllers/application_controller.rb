@@ -7,8 +7,15 @@ class ApplicationController < ActionController::Base
 
                devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password)}
           end
+        
+
           def after_sign_in_path_for(resource)
-               cart_path(:id => current_user.id)
-          end
+               case resource
+               when User
+                    cart_path(:id => current_user.id)
+               when Seller
+                    new_product_path(:seller_id => current_seller.id)
+               end
+             end
    
 end

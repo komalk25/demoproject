@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
     #@seller = Seller.find(params[:seller_id])
     #@product = @seller.products.find(params[:id])
   end
- 
+  
+   
   def create
     @seller = Seller.find(params[:seller_id]) 
     @product = @seller.products.create(product_params)

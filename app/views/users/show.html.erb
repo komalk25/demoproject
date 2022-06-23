@@ -2,7 +2,7 @@
 <div class="row justify-content-center main-container">
   <div class="col-4 ">
     <div class="card" style="width: 26rem;">
-      <section style="background-color: rgb(231, 238, 255);">
+      <section style="background-color: #f6f6f7">
       <div class="card-body">
   
         <h5 class="card-title"><div class="fw-bold" ><%= @user.name %><br></div></h5>
@@ -11,7 +11,7 @@
         <%= @user.phone%><br></p>
         <%= link_to "+ edit ", edit_user_path,class:"btn btn-outline-dark"%></p>
         <%= button_to("Deliver to this address", orders_path,
-                  class: "btn btn-success btn-lg float-end")%>
+                  class: "btn btn-sm float-end", style:"background-color: #008ecc;")%>
   
       </div>
       </section>                
