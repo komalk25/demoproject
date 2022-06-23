@@ -9,7 +9,7 @@
         <p class="card-text"><%= @user.address%><br>
         <%= @user.pincode%><br>
         <%= @user.phone%><br></p>
-        <%= link_to "+ edit ", edit_user_path,class:"btn btn-outline-dark"%></p>
+        <%= link_to "+ Edit ", edit_user_path,class:"btn btn-outline-dark"%></p>
         <%= button_to("Deliver to this address", orders_path,
                   class: "btn btn-sm float-end", style:"background-color: #008ecc;")%>
   
