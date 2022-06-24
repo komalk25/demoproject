@@ -13,9 +13,7 @@ class ApplicationController < ActionController::Base
                case resource
                when User
                     cart_path(:id => current_user.id)
-               when Seller
-                    new_product_path(:seller_id => current_seller.id)
                end
-             end
+          end
    
 end

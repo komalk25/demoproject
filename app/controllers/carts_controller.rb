@@ -28,12 +28,7 @@ class CartsController < ApplicationController
       end   
     end
 
-    def edit
-    end
 
-    def update
-    end
-  
     def destroy
       @cart = Cart.find_by(user_id: current_user.id)
       @cart_item = @cart.cart_items.find(params[:id])

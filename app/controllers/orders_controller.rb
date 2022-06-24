@@ -1,10 +1,13 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
-
+  def index
+    @orders = Order.all
+  end  
   
   def show
     @order = Order.find(params[:id])
+    
   end
 
   def create
@@ -12,7 +15,7 @@ class OrdersController < ApplicationController
     @cart = @user.cart
     if @cart.cart_items.blank?
     else
-      @order = @user.order.create
+      @order = @user.order.create(date: Time.now)
       @order.save
     end
 
