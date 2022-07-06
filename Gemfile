@@ -22,6 +22,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem 'carrierwave', '~> 2.0'
 gem "carrierwave-video"
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -50,7 +51,10 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 gem 'devise'
 gem 'cancancan'
-gem 'fog-aws'
+gem "figaro"
+gem "fog-aws"
+
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'pry-nav'
