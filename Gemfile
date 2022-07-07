@@ -53,6 +53,7 @@ gem 'devise'
 gem 'cancancan'
 gem "figaro"
 gem "fog-aws"
+gem 'aws-sdk'
 
 
 group :development, :test do
