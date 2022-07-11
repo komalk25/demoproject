@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
  # before_action :set_product, only: %i[ show edit update destroy ]
-  
+ load_and_authorize_resource :seller
+ load_and_authorize_resource :user
   def index
     @products = Product.all
   end
@@ -13,6 +14,7 @@ class ProductsController < ApplicationController
   
    
   def create
+    
     @seller = Seller.find(params[:seller_id]) 
     @product = @seller.products.create(product_params)
     redirect_to seller_path(@seller)

@@ -1,7 +1,9 @@
 class CartsController < ApplicationController
     include CurrentCart
-    before_action :authenticate_user!
     
+    before_action :authenticate_user! 
+
+  
     def show
       @cart = set_cart
     end
@@ -13,7 +15,6 @@ class CartsController < ApplicationController
       end
       @cart.save
       redirect_to cart_path  
-
     end
 
     def create
