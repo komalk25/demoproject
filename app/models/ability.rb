@@ -10,14 +10,19 @@ class Ability
     #   can :read, :all
     #  return unless user.current_seller?
     #   can :manage, :all
-    
+  
     if user.is_a?(Seller)
       can :read, :all
+      
+      can [:create, :update], Product, :seller_id => user.id
       cannot :read, Cart
-      cannot :read, Cart, self_managed: true 
     elsif user.is_a?(User)
       can :read, Product
-      can :create, Cart
+      can :read, Cart
+      can :reduce_quantity, Cart
+      can :destroy, Cart
+      can :create, Cart, :product_id
+    
     else
       can :read, :all  
     end

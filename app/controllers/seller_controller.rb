@@ -1,4 +1,5 @@
 class SellerController < ApplicationController
+  load_and_authorize_resource
     before_action :authenticate_seller!
     def index
          @seller = Seller.all
@@ -6,6 +7,7 @@ class SellerController < ApplicationController
      end
  
      def show
+    
          @seller = Seller.find(params[:id])
          
      end

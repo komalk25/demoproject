@@ -34,8 +34,13 @@
           <hr class="my-0" />
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
+             <%if seller_signed_in?%>
+                You could'nt add products to the cart with seller credentials
+             <%else%>
              
               <%= button_to "Add to Cart", carts_path(:product_id => @product.id), method: :post, class: "btn", style:"background-color: #008ecc;"%>
+             <%end%>
+              
             </div>
           </div>
         </div>
@@ -43,5 +48,6 @@
   </div>
   </div>
 </section>
- <%= link_to "edit",edit_seller_product_path(@product), class:"btn btn-primary" %>
- <%= button_to("Log Out",destroy_user_session_path,method: :delete) %>
+
+
+ 

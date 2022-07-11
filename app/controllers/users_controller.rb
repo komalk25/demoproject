@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def profile
+    @profile = User.find(params[:id])
+  end
+
   def show
     @user = User.find_by(id: current_user.id)
     @cart = Cart.find_by(user_id: current_user.id)
