@@ -6,12 +6,11 @@
 <h4>product List:</h4>
 <%= render @seller.products %>
 
-
 <% if @seller.name != current_seller.name %>
      
 <%else%>
 <h2>Add a products:</h2>
 <%= render 'products/form', product:@seller.products.build%>
 <%end%> 
-
+<%= link_to "All Products", seller_products_path(@seller), class:"btn", style:"background-color: #008ecc;"%>
 </div>

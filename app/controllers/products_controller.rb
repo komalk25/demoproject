@@ -51,16 +51,16 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 =end
-  # GET /products/1/edit
+  
   def edit
-    @seller = Seller.find(params[:seller_id])
-    @product = Product.find(params[:id])
+    @seller = Seller.find(current_seller.id)
+    @product = @seller.products.find(params[:id])
   end
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
-    @seller = Seller.find(params[:seller_id])
-    @product = Product.find(params[:id])
+    @seller = Seller.find(current_seller.id)
+    @product = @seller.products.find(params[:id])
     if @product.update(product_params)
       redirect_to @seller
     else
