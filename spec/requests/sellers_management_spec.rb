@@ -1,18 +1,27 @@
 require "rails_helper"
 
 RSpec.describe "seller management", :type => :request do
-    
-    it "index page test" do
-        get "/sellers/sign_up"
-        expect(response).to have_http_status(200)
-        
-        get "/sellers/sign_in"
-        expect(response).to have_http_status(200)
-    
-        post "/sellers/sign_in", :params => {:seller => {:email => "renuka@gmail.com"}}
+    before(:all) do
+        @seller = FactoryBot.create(:seller)
+        sign_in @seller    
+    end 
 
-        expect(response).to have_http_status(200)
+    # it "index page test" do
+    #     get "/sellers/sign_up"
+    #     expect(response).to have_http_status(200)
         
-    end     
+    #     get "/sellers/sign_in"
+    #     expect(response).to have_http_status(200)
+    
+    # end 
 
+    it "get seller index page" do
+        get "/seller"
+        expect(response).to render_template(:index)   
+    end 
+    
+    it "does not render a index page" do
+        get "/seller"
+        expect(response).to_not render_template(:show)
+    end  
 end
