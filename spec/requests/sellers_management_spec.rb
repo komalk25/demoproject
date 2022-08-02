@@ -24,4 +24,9 @@ RSpec.describe "seller management", :type => :request do
         get "/seller"
         expect(response).to_not render_template(:show)
     end  
+
+    it "seller show [age" do 
+        get seller_path(@seller.id)
+        expect(response).to redirect_to("/sellers/sign_in")    
+    end   
 end
