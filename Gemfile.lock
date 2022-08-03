@@ -1609,7 +1609,6 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.3)
   rails-controller-testing
-  rexml
   rspec-rails (~> 5.1, >= 5.1.2)
   selenium-webdriver
   shoulda-matchers (~> 5.0)

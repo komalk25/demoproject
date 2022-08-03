@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.feature "cart management" do
     
     before(:each) do
-        @cart = FactoryBot.create(:cart)
         @user = FactoryBot.create(:user)
+        @cart = FactoryBot.create(:cart, user_id: @user.id)
+       
         login_as(@user, :scope => :user)
     end
 
@@ -12,7 +13,7 @@ RSpec.feature "cart management" do
        visit cart_path(@cart)
        expect(page).to have_content("checkout") 
        click_link("checkout")
-       expect(current_path).to eq("/users/#{@}")
+       expect(current_path).to eq("/users/#{@user.id}")
 
        
     end    
