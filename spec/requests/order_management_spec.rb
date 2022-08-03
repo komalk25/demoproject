@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "order management", :type => :request do
+RSpec.describe 'order management', :type => :request do
     before(:each) do
        
         @user = FactoryBot.create(:user)
@@ -9,7 +9,7 @@ RSpec.describe "order management", :type => :request do
         sign_in @user
     end 
    
-    it "orders flow" do
+    it 'orders flow' do
         get user_path(@user)
         expect(response).to render_template("users/show")
     end    

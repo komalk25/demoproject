@@ -1,27 +1,27 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class ProductsTest < ApplicationSystemTestCase
   setup do
     @product = products(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit products_url
-    assert_selector "h1", text: "Products"
+    assert_selector 'h1', text: 'Products'
   end
 
-  test "should create product" do
+  test 'should create product' do
     visit products_url
-    click_on "New product"
+    click_on 'New product'
 
-    fill_in "Description", with: @product.description
-    fill_in "Price", with: @product.price
-    fill_in "Seller", with: @product.seller_id
-    fill_in "Title", with: @product.title
-    click_on "Create Product"
+    fill_in 'Description', with: @product.description
+    fill_in 'Price', with: @product.price
+    fill_in 'Seller', with: @product.seller_id
+    fill_in 'Title', with: @product.title
+    click_on 'Create Product'
 
-    assert_text "Product was successfully created"
-    click_on "Back"
+    assert_text 'Product was successfully created'
+    click_on 'Back'
   end
 
   test "should update Product" do
