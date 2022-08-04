@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.feature 'seller management', :type => :feature do
   scenario 'user authentication' do
@@ -6,5 +6,5 @@ RSpec.feature 'seller management', :type => :feature do
     click_button 'Log in'
     expect(page).to have_http_status(200)
     expect(page).to render_template('products/_product.html.erb')
-  end 
+  end
 end

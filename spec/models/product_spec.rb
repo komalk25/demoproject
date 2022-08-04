@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-  let(:seller){
+  let(:seller) {
     Seller.new(:email => 'komal@gmail.com',:name => 'komal')
   }
-  subject{
+  subject {
     described_class.new(
       title: 'woment top',
       description: 'regular fit, round neck top',
@@ -28,8 +28,8 @@ RSpec.describe Product, type: :model do
     subject.price = nil
     expect(subject).to_not be_valid
   end
-  describe 'Associations' do 
-    it {should belong_to(:seller)}
+  describe 'Associations' do
+    it { should belong_to(:seller) }
   end
 end
 

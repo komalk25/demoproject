@@ -4,16 +4,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the user here. For example:
-    #
-    #   return unless user.current_user?
-    #   can :read, :all
-    #  return unless user.current_seller?
-    #   can :manage, :all
-  
     if user.is_a?(Seller)
       can :read, :all
-      
       can [:create, :update], Product, :seller_id => user.id
       cannot :read, Cart
     elsif user.is_a?(User)
@@ -22,9 +14,8 @@ class Ability
       can :reduce_quantity, Cart
       can :destroy, Cart
       can :create, Cart, :product_id
-    
     else
-      can :read, :all  
+      can :read, :all
     end
     #
     # The first argument to `can` is the action you are giving the user

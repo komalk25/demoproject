@@ -24,24 +24,24 @@ class ProductsTest < ApplicationSystemTestCase
     click_on 'Back'
   end
 
-  test "should update Product" do
+  test 'should update Product' do
     visit product_url(@product)
-    click_on "Edit this product", match: :first
+    click_on 'Edit this product', match: :first
 
-    fill_in "Description", with: @product.description
-    fill_in "Price", with: @product.price
-    fill_in "Seller", with: @product.seller_id
-    fill_in "Title", with: @product.title
-    click_on "Update Product"
+    fill_in 'Description', with: @product.description
+    fill_in 'Price', with: @product.price
+    fill_in 'Seller', with: @product.seller_id
+    fill_in 'Title', with: @product.title
+    click_on 'Update Product'
 
-    assert_text "Product was successfully updated"
-    click_on "Back"
+    assert_text 'Product was successfully updated'
+    click_on 'Back'
   end
 
-  test "should destroy Product" do
+  test 'should destroy Product' do
     visit product_url(@product)
-    click_on "Destroy this product", match: :first
+    click_on 'Destroy this product', match: :first
 
-    assert_text "Product was successfully destroyed"
+    assert_text 'Product was successfully destroyed'
   end
 end
