@@ -10,7 +10,3 @@ FactoryBot.define do
     password_confirmation { 'person1' }
   end
 end
-
-
-
-

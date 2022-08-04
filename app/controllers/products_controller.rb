@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
- # before_action :set_product, only: %i[ show edit update destroy ]
+  # before_action :set_product, only: %i[ show edit update destroy ]
   load_and_authorize_resource
   def index
     @products = Product.all
@@ -7,15 +7,15 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    #@seller = Seller.find(params[:seller_id])
-    #@product = @seller.products.find(params[:id])
+    # @seller = Seller.find(params[:seller_id])
+    # @product = @seller.products.find(params[:id])
   end
 
   def create
-    @seller = Seller.find(params[:seller_id]) 
+    @seller = Seller.find(params[:seller_id])
     @product = @seller.products.create(product_params)
     redirect_to seller_path(@seller)
-    #@product = Product.new(product_params)
+    # @product = Product.new(product_params)
   end
 
   #  respond_to do |format|
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
     @seller = Seller.find(params[:seller_id])
     @product = @seller.products.find(params[:id])
     @product.destroy
-    redirect_to seller_path(@seller), status: 303 
+    redirect_to seller_path(@seller), status: 303
     #  @product.destroy
   end
   #  respond_to do |format|
@@ -40,10 +40,10 @@ class ProductsController < ApplicationController
   #    format.json { head :no_content }
   #  end
 
- # GET /products/new
- # def new
- #   @product = Product.new
- # end
+  # GET /products/new
+  # def new
+  #   @product = Product.new
+  # end
   def edit
     @seller = Seller.find(current_seller.id)
     @product = @seller.products.find(params[:id])
@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to @seller
     else
-      render :edit, status: :unprocessable_entity  
+      render :edit, status: :unprocessable_entity
     end
   end
   #  respond_to do |format|
@@ -67,12 +67,12 @@ class ProductsController < ApplicationController
   #      format.html { render :edit, status: :unprocessable_entity }
   #      format.json { render json: @product.errors, status: :unprocessable_entity }
   #    end
-  #  end 
+  #  end
 
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  #def set_product
+  # def set_product
   #    @product = Product.find(params[:id])
   #  end
   # Only allow a list of trusted parameters through.

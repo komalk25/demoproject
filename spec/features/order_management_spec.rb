@@ -9,10 +9,8 @@ RSpec.feature 'order management' do
   end
   it 'orders flow' do
     visit user_path(@user)
-    expect(page).to have_content('Deliver to this address') 
+    expect(page).to have_content('Deliver to this address')
     click_button('Deliver to this address')
     expect(current_path).to eq(orders_path)
   end
 end
-
-

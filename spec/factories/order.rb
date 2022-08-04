@@ -4,4 +4,3 @@ FactoryBot.define do
     date { Date.today }
   end
 end
-

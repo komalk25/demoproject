@@ -1,5 +1,4 @@
 module CurrentOrder
-
   private
 
   def set_order

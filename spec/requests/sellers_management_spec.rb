@@ -24,4 +24,3 @@ RSpec.describe 'seller management', :type => :request do
     expect(response).to redirect_to('/sellers/sign_in')
   end
 end
-
