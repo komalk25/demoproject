@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'product management', :type => :request do 
+RSpec.describe 'product management', :type => :request do
   before(:all) do
     @seller = FactoryBot.create(:seller)
     sign_in @seller
